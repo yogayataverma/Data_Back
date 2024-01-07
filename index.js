@@ -11,7 +11,7 @@ app.use(cors());
 
 console.log(process.env.BACK_URL);
 const url = process.env.BACK_URL;
-mongoose.connect(url, {
+mongoose.connect("mongodb+srv://user1:user@cluster0.3pamlof.mongodb.net/", {
   useNewUrlParser: true, 
   useUnifiedTopology: true
 });
