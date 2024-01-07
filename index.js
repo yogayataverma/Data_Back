@@ -2,15 +2,15 @@ const express = require("express");
 require('dotenv').config();
 const app = express();
 const cors = require("cors");
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 mongoose.set("strictQuery" , true);
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 app.use(cors());
 
+console.log(process.env.BACK_URL);
 const url = process.env.BACK_URL;
-
 mongoose.connect(url, {
   useNewUrlParser: true, 
   useUnifiedTopology: true
