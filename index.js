@@ -26,7 +26,7 @@ const router = express.Router();
 
 let detail = require("./model");
 
-router.route("/count").get(function(req, res) {
+router.route("/").get(function(req, res) {
     detail.countDocuments({}, function(err, count) {
       if (err) {
         res.send(err);
