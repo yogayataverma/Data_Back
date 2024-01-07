@@ -57,14 +57,6 @@ app.use("/", router);
 
 //Server
 
-if(process.env.NODE_ENV === "production")
-{
- app.use(express.static(path.join("client/data/build")));
- app.get("*", (req,res)=>{
-  res.sendFile(path.resolve(__dirname, "client" , "data" , "build" , "index.html"))
- });
-}
-
 app.listen(PORT, function() {
   console.log("Server is running on Port: " + PORT);
 });
